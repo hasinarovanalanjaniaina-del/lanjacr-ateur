@@ -1,0 +1,6 @@
+{
+  "name": "Lanja Créateur",
+  "description": "Portfolio professionnel de Lanja Créateur - Vitrine de réalisations vidéo, audio, et graphisme avec console d'administration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
