@@ -15,7 +15,47 @@ import VisitorAuthModal from './components/VisitorAuthModal';
 
 import { Project, ProjectCategory, ContactMessage, Visitor } from './types';
 import { INITIAL_PROJECTS, MOCK_TESTIMONIALS } from './data/initialProjects';
-import lanjaPortrait from './assets/images/lanja_portrait.png';
+
+// Sleek and modern editorial/creative vector portrait of Lanja as a safe design default fallback
+const lanjaPortrait = `data:image/svg+xml;utf8,` + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="url(#glow)" stroke-width="4" stroke-dasharray="10 5" opacity="0.4"/>
+  <circle cx="350" cy="180" r="120" fill="url(#glow)" filter="url(#blurFilter)" opacity="0.3"/>
+  <circle cx="160" cy="350" r="100" fill="#3b82f6" filter="url(#blurFilter)" opacity="0.15"/>
+  <path d="M120,440 C120,380 160,320 256,320 C352,320 392,380 392,440 L392,512 L120,512 Z" fill="url(#bodyGrad)" stroke="#1e293b" stroke-width="2"/>
+  <path d="M210,320 L210,360 L240,380 L256,380 L272,380 L302,360 L302,320 Z" fill="#0f172a"/>
+  <path d="M210,320 C230,345 282,345 302,320" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.3"/>
+  <rect x="206" y="160" width="100" height="130" rx="50" fill="#1e293b" stroke="#334155" stroke-width="3"/>
+  <path d="M206,200 C206,140 306,140 306,200 C306,150 206,150 206,200 Z" fill="#0f172a"/>
+  <path d="M206,190 C190,210 200,240 208,230" fill="none" stroke="#334155" stroke-width="2"/>
+  <path d="M306,190 C322,210 312,240 304,230" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="216" y="200" width="34" height="24" rx="6" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.95"/>
+  <rect x="262" y="200" width="34" height="24" rx="6" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.95"/>
+  <line x1="250" y1="210" x2="262" y2="210" stroke="#22d3ee" stroke-width="3" opacity="0.95"/>
+  <circle cx="233" cy="212" r="3" fill="#ffffff" opacity="0.8"/>
+  <circle cx="279" cy="212" r="3" fill="#ffffff" opacity="0.8"/>
+  <text x="40" y="60" fill="#475569" font-family="Courier, monospace" font-size="12" letter-spacing="2">DIR. ARTISTIQUE</text>
+  <text x="40" y="80" fill="#22d3ee" font-family="Courier, monospace" font-size="10" opacity="0.8">[LANJA]</text>
+</svg>`);
 
 // Helper to write to localStorage safely without crashing when limits (like 5MB) are reached
 const safeSetLocalStorage = (key: string, value: string) => {
